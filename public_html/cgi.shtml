@@ -1,0 +1,30 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" >
+   <meta name="generator" content="Bluefish 2.2.2" >
+   <title>Department of Information Technology</title>
+<style>
+
+	A:visited{ color: "#677D0E"; text-decoration:'none' }           
+
+	A:hover{ color: "#6623ED";}
+
+	A:active{ color: "#677D0E"; font-style: italic }
+
+	A:link{ color: "#08009E"; text-decoration:'none' }           
+
+</style>
+</head>
+<body>
+
+<center>
+<hr>
+<!--#include virtual="./cgi-bin/counter.cgi"-->
+<br>
+<hr>
+<p><font size=+2>email to me: <a href="mailto:pbao@poly.usf.edu">pbao@poly.usf.edu</a></font></center>
+</center>
+
+</body>
+</html>
