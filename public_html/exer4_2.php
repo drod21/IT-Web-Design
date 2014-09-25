@@ -5,7 +5,6 @@
    <body>
     <?php 
     $digits = 6;
-    $dir = "digit/*.gif";
     $filelocation="entercounter.txt";
            
     if (!file_exists($filelocation)) {
@@ -24,6 +23,9 @@
      fclose($newfile);
 
     echo "".sprintf ("%0"."$digits"."d",$content)."";
-    ?><img alt="" src="digit/<?php echo substr($content, $i, 1) ?>.gif">
+    for ($i = 0; $i < strlen($content); $i++){}
+    ?>
+    <img alt="" src="digit/<?php echo substr($content, $i, 1) ?>.gif">
+
 </body>
 </html>
