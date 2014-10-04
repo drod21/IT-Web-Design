@@ -166,22 +166,30 @@ style='font-size:14.0pt;color:blue'><o:p></o:p></span></p>
 
 <h3>Exercise 1.B</h3>
    <ol>
-    <li><a href="exer1_1.html" >Question 1</a></li>
-    <li><a href="exer1_2.html" >Question 2</a></li>
-    <li><a href="exer1_3.html" >Question 3</a></li>
+    <li><a href="mod1/exer1_1.html" >Question 1</a></li>
+    <li><a href="mod1/exer1_2.html" >Question 2</a></li>
+    <li><a href="mod1/exer1_3.html" >Question 3</a></li>
    </ol>
    
    <h3>Exercise 2</h3>
-   <a href="exer2.html" > Exercise 2</a>
+   <a href="mod2/exer2.html" > Exercise 2</a>
 
    <h3>Exercise 3</h3>
-   <a href="gpa.html"> GPA Calculator for Exercise 3 </a>
+   <a href="mod3/gpa.html"> GPA Calculator for Exercise 3 </a>
 
    <h3>Exercise 4</h3>
    <ol>
-    <li><a href="exer4_1.php">Form Processing, Exercise 4.1</a></li>
-    <li><a href="exer4_2.php">Digit Counter, Exercise 4.2</a></li>
-    <li><a href="exer4_3.php">Syntax Highlighting, Exercise 4.3</a></li>
+    <li><a href="mod4/exer4_1.php">Form Processing, Exercise 4.1</a></li>
+    <li><a href="mod4/exer4_2.php">Digit Counter, Exercise 4.2</a></li>
+    <li><a href="mod4/exer4_3.php">Syntax Highlighting, Exercise 4.3</a></li>
+   </ol>
+
+   <h3>Exercise 5</h3>
+   <ol>
+    <li><a href="mod5/insert.php">Insert Data</a></li>
+    <li><a href="mod5/mysql.php">View Data</a></li>
+    <li><a href="mod5/sort.php">Sorting</a></li>
+    <li><a href="mod5/delete.php">Delete and Update</a></li>
    </ol>
 
 <center>
