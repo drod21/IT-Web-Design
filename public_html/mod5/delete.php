@@ -16,18 +16,20 @@ $first = $_REQUEST['first'];
 $last = $_REQUEST['last'];
 $address = $_REQUEST['address'];
 $position = $_REQUEST['position'];
-$age = $_REQUEST['age_range'];
+$age = $_REQUEST['age'];
 $gender = $_REQUEST['gender'];
 $phone_number = $_REQUEST['phone_number'];
+$email = $_REQUEST['email'];
 $interests = $_REQUEST['interests'];
+$profession = $_REQUEST['profession'];
 
   if ($id) {
 
-    $sql = "UPDATE guestbook SET first='$first',last='$last',address='$address',position='$position', age_range='$age',gender='$gender',phone_number='$phone_number',interests='$interests' WHERE id=$id";
+    $sql = "UPDATE guestbook SET first='$first',last='$last',address='$address',position='$position', age='$age',gender='$gender',phone_number='$phone_number',email='$email',interests='$interests',profession='$profession' WHERE id=$id";
 
   } else {
 
-    $sql = "INSERT INTO guestbook (first,last,address,position) VALUES ('$first','$last','$address','$position','$age','$gender','$phone_number','$interests')";
+    $sql = "INSERT INTO guestbook (first,last,address,position,age,gender,phone_number,email,interests,profession) VALUES ('$first','$last','$address','$position','$age','$gender','$phone_number','$email','$interests','$profession')";
 
   }
 
@@ -60,7 +62,7 @@ $interests = $_REQUEST['interests'];
 
     printf("<a href=delete.php?id=%s&delete=yes>(DELETE)</a>", $myrow["id"]);      
     printf("<a href=delete.php?id=%s>(UPDATE)</a>", $myrow["id"]);      
-    printf(" First name: %s; Last name:  %s; Address: %s;  Position: %s; Age: %s; Gender: %s; Phone number: %s; Interests: %s; </a> \n<br>", $myrow["first"], $myrow["last"], $myrow["address"], $myrow["position"], $myrow["age_range"], $myrow["gender"], $myrow["phone_number"], $myrow["interests"]);
+    printf(" First name: %s; Last name:  %s; Address: %s;  Position: %s; Age: %s; Gender: %s; Phone number: %s; Email address: %s; Interests: %s; </a> \n<br>", $myrow["first"], $myrow["last"], $myrow["address"], $myrow["position"], $myrow["age"], $myrow["gender"], $myrow["phone_number"], $myrow["email"], $myrow["interests"], $myrow["profession"]);
     }
   }
  ?>
@@ -83,10 +85,12 @@ $interests = $_REQUEST['interests'];
     $last = $myrow["last"];
     $address = $myrow["address"];
     $position = $myrow["position"];
-    $age = $_REQUEST['age_range'];
+    $age = $_REQUEST['age'];
     $gender = $_REQUEST['gender'];
     $phone_number = $_REQUEST['phone_number'];
+    $email = $_REQUEST['email'];
     $interests = $_REQUEST['interests'];
+    $profession = $_REQUEST['profession'];
     
 
     // print the id for editing
@@ -103,7 +107,9 @@ $interests = $_REQUEST['interests'];
   Age:<input type="Text" name="age" value="<?php echo $age ?>"><br>
   Gender:<input type="Text" name="gender" value="<?php echo $gender ?>"><br>
   Phone Number:<input type="Text" name="phone_number" value="<?php echo $phone_number ?>"><br>
-  Interests:<input type="Text" name="interests" value="<?php echo $interests ?>"><br><br>
+  Email:<input type="Text" name="email" value="<?php echo $email ?>"><br>
+  Interests:<input type="Text" name="interests" value="<?php echo $interests ?>"><br>
+  Profession:<input type="Text" name="profession" value="<?php echo $profession ?>"><br><br>
 
   <input type="Submit" name="submit" value="Enter information">
 
