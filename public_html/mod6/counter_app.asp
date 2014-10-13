@@ -14,6 +14,10 @@ Response.Expires = 0
 <B>Using Session Variables</B></FONT><BR>
 <HR SIZE="1" COLOR="#000000">
 <%
+'Adds the digit path for easier logic'
+Dim DigitPath
+DigitPath = "digits/"
+
 'If this is the first time a user has visited
 'the page, initialize Session Value.
 If (Session("SessionCountVB") = "") Then
@@ -29,10 +33,32 @@ Session("SessionCountVB") = Session("SessionCountVB") + 1
 <%
 'Note that this only works for a counter up to two digits
 Dim digit2, digit1, counter
+'Pad size, digit count, zeros to add'
+Dim FixedPadCount
+Dim DigitCountLength
+Dim ZerosToAdd
+Dim ZeroCount
+Dim ShowDigits
+Dim DigitCount
 counter = Session("SessionCountVB")
 digit1 = counter MOD 10
 counter = counter \ 10
-digit2 = counter MOD 10 %>
+digit2 = counter MOD 10 
+DigitCountLength = Len(counter)
+FixedPadCount = 7
+If DigitCountLength < FixedPadCount Then
+        ZerosToAdd = FixedPadCount - DigitCountLength
+        ZeroCount = 1
+        For ZeroCount = ZeroCount to ZerosToAdd
+              ShowDigits = ShowDigits & "<img src=""" & DigitPath & "/0.gif"" Alt =""" & counter & " Visitors"" >"
+        Next
+End If
+counter = 1
+For counter = counter to DigitCountLength
+	ShowDigits = ShowDigits & "<img src=""" & DigitPath & "/" & Mid(counter,DigitCount,1) & ".gif"" Alt =""" & counter & " Visitors"">"
+Next
+%>
+<% =ShowDigits %><br>
  
 You have personally visited this page
 <img src="digit/<%=digit2%>.gif"><img src="digit/<%=digit1%>.gif"> times!
