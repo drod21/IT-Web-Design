@@ -21,6 +21,7 @@
 <br>
 <br>
 <%
+'Add calculations for grade weights & grade calculations'
 dim grade
 grade = 0
 If request.form("assign1") >= 0.01 & request.form("assign1") <= 100 Then
@@ -44,10 +45,10 @@ grade = grade + request.form("final") * 0.40
 else grade = grade + 40
 End If
 %>
-<p><% Response.Write "Your final grade is : " & (grade)%></p>
 <% IF request.form ("Message")="True" THEN%>
 <% Response.Write "Thank You For Filling Out the Form " + Request.Form("name") %>
 <p><% Response.Write "You are " + Request.Form("age") + " Years of Age" %></P>
+<p><% Response.Write "Your final grade is : " & (grade)%></p>
 <p><% Response.Write "Your shoe size is " + Request.Form("size") %></p>
 <p>
 <%

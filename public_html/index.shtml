@@ -192,6 +192,16 @@ style='font-size:14.0pt;color:blue'><o:p></o:p></span></p>
     <li><a href="mod5/delete.php">Delete and Update</a></li>
    </ol>
 
+   <h3>Project</h3>
+
+   <h3>Exercise 6</h3>
+   <ol>
+    <li><a href="http://bismuth.forest.usf.edu/derek23/asp/exer6_1.asp">Exercise 6.1</a></li>
+    <li><a href="http://bismuth.forest.usf.edu/derek23/asp/counter_app.asp">ASP Counter App</a></li>
+   </ol>
+
+   <h3>Exercise 7</h3>
+
 <center>
 <hr>
 <!--#include virtual="./cgi-bin/counter.cgi"-->
