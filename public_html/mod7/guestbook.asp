@@ -12,14 +12,14 @@ IF request.form ("Message")="True" THEN
 'Creates an instance of an Active Server component
 set objConn = server.createobject("ADODB.Connection")
 'Opens the connection to the data store
-mdbfile=Server.MapPath("db/Guestbook.mdb")
+mdbfile=Server.MapPath("db/U37516832.mdb")
 objConn.Open "Driver={Microsoft Access Driver (*.mdb)}; DBQ=" & mdbfile & ";"
 'Instantiate Command object and use ActiveConnection property to
 'attach connection to Command object
 set cm = Server.CreateObject("ADODB.Command")
 cm.ActiveConnection = objConn
 'Define SQL query
-cm.commandText ="INSERT INTO Table1 (TB1,TB2,TB3,TB4,MB1) VALUES ('" & request.form("To") & "','" & request.form("EMailAdd") & "','" & request.form("CC") & "','" & request.form("Subject") & "', 'True')" 
+cm.commandText ="INSERT INTO Table1 (first,last,phone,gender,address,profession,age,email,interests,MB1Memo) VALUES ('" & request.form("To") & "','" & request.form("EMailAdd") & "','" & request.form("CC") & "','" & request.form("Subject") & "', 'True')" 
 cm.execute
 response.write("Thank you!")  
 ELSE%>
