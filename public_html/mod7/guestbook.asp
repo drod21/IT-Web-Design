@@ -19,7 +19,7 @@ objConn.Open "Driver={Microsoft Access Driver (*.mdb)}; DBQ=" & mdbfile & ";"
 set cm = Server.CreateObject("ADODB.Command")
 cm.ActiveConnection = objConn
 'Define SQL query
-cm.commandText ="INSERT INTO Table1 (first,last,phone,gender,address,profession,age,email,interests,MB1Memo) VALUES ('" & request.form("To") & "','" & request.form("EMailAdd") & "','" & request.form("CC") & "','" & request.form("Subject") & "', 'True')" 
+cm.commandText ="INSERT INTO Table1 (first,last,email,phone,gender,address,profession,age,interests,MB1Memo) VALUES ('" & request.form("First") & "','" & request.form("Last") & "','" & request.form("EMailAdd") & "','" & request.form("Phone") & "','" & request.form("Gender") & "','" & request.form("Address") & "','" & request.form("Profession") & "','" & request.form("Age") & "','" & request.form("Interests") & "', 'True')" 
 cm.execute
 response.write("Thank you!")  
 ELSE%>
@@ -27,15 +27,24 @@ ELSE%>
 
 <!--Post information to Guestbook form -->
 <form name=guestbook.asp  action="guestbook.asp"  method="POST">
-<p>To</p>
-<p><input type="Text" name="To"></p>
+<p>First Name</p>
+<p><input type="Text" name="First"></p>
+<p>Last Name</p>
+<p><input type="Text" name="Last"></p>
 <p>Email Address</p>
 <p><input type="Text" name="EmailAdd"></p>
-<p> CC</p>
-<p><input type="Text" name="CC"></p>
-<p>Subject</p>
-<p><input type="Text" name="Subject"></p>
-<p>Message</p>
+<p>Phone Number</p>
+<p><input type="Text" name="Phone"></p>
+<p>Gender</p>
+<p><input type="Text" name="Gender"></p>
+<p>Address</p>
+<p><input type="Text" name="Address"></p>
+<p>Profession</p>
+<p><input type="Text" name="Profession"></p>
+<p>Age</p>
+<p><input type="Text" name="Age"></p>
+<p>Interests</p>
+<p><input type="Text" name="Interests"></p>
 <p><textarea name="Memo" rows=6 cols=70></textarea></p> 
 <input  type="HIDDEN" name="Message" value="True">
 <input type="submit" value="Submit information">

@@ -25,7 +25,7 @@ function reloadOnceOnly() {
 if request.form("sort")<> "" THEN
 StrSort=request.form("sort")
 ELSE
-StrSort="TB2 ASC"
+StrSort="last ASC"
 END IF
 
 strQuery="SELECT * FROM Table1 ORDER BY " &StrSort
