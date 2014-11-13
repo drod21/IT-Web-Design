@@ -31,25 +31,24 @@ background-color:black;
 <H3> Instructions for Student Questionnaire</H3>
 <br>
 <div class="first">
-   <p>Course Number</p>
-    <input type="text" name="cnum" maxlength="20">
-<br>
-
-   <p>Semester</p>
-    <select name=semester>
-     <option value='' selected>Choose your semester from this list
-     <option value=1>Spring 2013
-     <option value=2>Fall 2013
-     <option value=3>Spring 2014
-     <option value=4>Fall 2014
-    </select>
-<br>
-
    <p>Course Title</p>
    <input type="text" name="ctitle" maxlength="50"><br>
 
+   <p>Semester</p>
+    <select name="semester">
+     <option value="">Choose your semester from this list</option>
+     <option value="Spring 2013">Spring 2013</option>
+     <option value="Fall 2013">Fall 2013</option>
+     <option value="Spring 2014">Spring 2014</option>
+     <option value="Fall 2014">Fall 2014</option>
+    </select> 
+<br>
    <p>Instructor's Name</p>
-   <input type="text" name="instructor" maxlength="50"><BR>
+   <input type="text" name="iname" maxlength="50"><br>
+   
+   <p>Course Number</p>
+    <input type="text" name="cnum" maxlength="50">
+<br>
 </div>
 <div class="questions">
 <h3 class="header">Questions</h3>
@@ -134,12 +133,18 @@ background-color:black;
 <p>Please check your answers. When you are done, push the button below.</p>
 <p><input type='submit' value='Finished'></p>
 <H2>Thank You!</H2>
-</form>
 </body>
-<?php $instructor = $_REQUEST['iname'];
+</form>
+<br>
+<br>
+<a href="questionnaire1.php">Search Records</a><br>
+<a href="questionnaire2.php">View records by instructor, course, or semsester</a><br>
+<a href="display.php">Display all records</a><br>
+<?php 
+$iname = $_REQUEST['iname'];
 $cnum = $_REQUEST['cnum'];
 $ctitle = $_REQUEST['ctitle'];
-$semester = $_REQUEST['semster'];
+$semester = $_REQUEST['semester'];
 $objective = $_REQUEST['objective'];
 $comm = $_REQUEST['comm'];
 $expr = $_REQUEST['expr'];
@@ -154,7 +159,7 @@ Thank You For Filling Out the Form  <br>
 <?php 
 $db = mysql_connect("localhost", "derek23", "6tfc%RDX") or die(mysql_error());
 mysql_select_db("derek23",$db) or die(mysql_error()); 
-mysql_query("INSERT INTO `questionnaire` (`iname`, `cnum`, `ctitle`, `semester`, `objective`, `comm`, `expr`, `avail`, `resp`, `interest`, `facil`, `overall`, `comments`) VALUES ('$instructor', '$cnum', '$ctitle', '$semester','$objective', '$comm', '$expr', '$avail', '$resp', '$interest', '$facil', '$overall' '$comments')",$db);
+mysql_query("INSERT INTO `questionnaire` (`iname`, `cnum`, `ctitle`, `semester`, `objective`, `comm`, `expr`, `avail`, `resp`, `interest`, `facil`, `overall`, `comments`) VALUES ('$iname', '$cnum', '$ctitle', '$semester','$objective', '$comm', '$expr', '$avail', '$resp', '$interest', '$facil', '$overall', '$comments')",$db);
 endif;?>
 <?php
 $result = mysql_query("SELECT * FROM questionnaire",$db); 

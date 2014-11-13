@@ -16,9 +16,9 @@ $db = mysql_connect("localhost", "derek23", "6tfc%RDX") or die(mysql_error());
 mysql_select_db("derek23",$db) or die(mysql_error()); 
 
 /* delete a record specified by $iname */
-if (isset ($_GET['id']) ) {
-    $id = $_GET['id'];
-    $result =mysql_query("DELETE FROM questionnaire WHERE iname=$instructor", $db);
+if (isset ($_GET['iname']) ) {
+    $instructor = $_GET['iname'];
+    $result =mysql_query("DELETE FROM questionnaire WHERE iname=$iname", $db);
 }
 
 /* construct and run our query */
@@ -54,7 +54,7 @@ mysql_data_seek ($result, 0);
 
 while ($row = mysql_fetch_assoc ($result)) {
     echo "<TR>\n";
-    $instructor=$row["iname"];
+    $iname=$row["iname"];
     echo "<TD><a href=\"{$_SERVER['PHP_SELF']}?iname=$instructor\">Delete</a></TD>\n";
     foreach ($row as $column) {
            echo "<TD>$column</TD>\n";

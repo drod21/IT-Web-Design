@@ -194,8 +194,10 @@ style='font-size:14.0pt;color:blue'><o:p></o:p></span></p>
 
    <h3>Project</h3>
    <ol>
-    <li><a href="project/questionnaire1.php">Questionnaire 1</a></li>
-    <li><a href="project/questionnaire2.php">Questionnaire 2</a></li>
+    <li><a href="project/questionnaire1.php">Keyword Search</a></li>
+    <li><a href="project/questionnaire2.php">Average Scores</a></li>
+    <li><a href="survey.php">Survey</a></li>
+    <li><a href="display.php">Display all survey records</a></li>
    </ol>
 
    <h3>Exercise 6</h3>
