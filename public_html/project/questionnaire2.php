@@ -6,11 +6,12 @@
 <?php
 $db = mysql_connect("localhost", "derek23", "6tfc%RDX") or die(mysql_error());
 mysql_select_db("derek23",$db) or die(mysql_error());
-$query = "SELECT iname, semester, ctitle, AVG(objective), AVG(interest), AVG(overall) FROM questionnaire GROUP BY iname";
+$query = "SELECT iname, semester, ctitle, AVG(objective), AVG(interest), (AVG(objective) + AVG(interest) + AVG(comm) + AVG(expr) + AVG(avail) + AVG(resp) + AVG(facil) + AVG(overall))/8 as Average FROM questionnaire GROUP BY iname";
 $result = mysql_query($query) or die(mysql_error());
 $num_rows=mysql_num_rows($result);?>
 <form action="questionnaire2.php" method="post">
 <br>
+<!--<p> Select a semester : <select name="semester" SIZE=<?php echo $num_rows?>>-->
 <p>Select an Instructor to see the average scores : <select name="instructor" SIZE=<?php echo $num_rows?>>
 <?php while($row = mysql_fetch_array($result)){?>
 <option> <?php echo $row['iname']; }?>
@@ -28,7 +29,7 @@ echo "The average score of the Course objectives for ". $row['iname']. " for ". 
 echo "<br />";
 echo "The average score of the Course interest for ". $row['iname']. " for ". $row['semester']. " and class ". $row['ctitle']. " is ".$row['AVG(interest)'];
 echo "<br />";
-echo "The overall average score of the Course for ". $row['iname']. " for ". $row['semester']. " and class ". $row['ctitle']. " is ".$row['AVG(overall)'];
+echo "The overall average score of the Course for ". $row['iname']. " for ". $row['semester']. " and class ". $row['ctitle']. " is ".$row['Average'];
 echo "<br />"; 
 }
 }
